@@ -1,0 +1,92 @@
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   .gitignore
+#	new file:   MonitorJS
+#	new file:   TODO.txt
+#	new file:   app.js
+#	new file:   config.js
+#	new file:   lib/addon/_database.js
+#	new file:   lib/addon/_log.js
+#	new file:   lib/core.js
+#	new file:   lib/cpu.js
+#	new file:   lib/database/mysql.js
+#	new file:   lib/sendApi.js
+#	new file:   log.log
+#	new file:   package.json
+#	new file:   public/css/.DS_Store
+#	new file:   public/css/ajouts.css
+#	new file:   public/css/boot.css
+#	new file:   public/css/component.css
+#	new file:   public/css/demo.css
+#	new file:   public/css/epoch.0.5.2.min.css
+#	new file:   public/css/flaticon.css
+#	new file:   public/css/flaticon.eot
+#	new file:   public/css/flaticon.svg
+#	new file:   public/css/flaticon.ttf
+#	new file:   public/css/flaticon.woff
+#	new file:   public/css/normalize.css
+#	new file:   public/css/tabs.css
+#	new file:   public/css/toastr.css
+#	new file:   public/css/toastr.min.css
+#	new file:   public/fonts/.DS_Store
+#	new file:   public/fonts/codropsicons/.DS_Store
+#	new file:   public/fonts/codropsicons/codropsicons.eot
+#	new file:   public/fonts/codropsicons/codropsicons.svg
+#	new file:   public/fonts/codropsicons/codropsicons.ttf
+#	new file:   public/fonts/codropsicons/codropsicons.woff
+#	new file:   public/fonts/codropsicons/license.txt
+#	new file:   public/fonts/ecoicons/Read Me.txt
+#	new file:   public/fonts/ecoicons/ecoicons.dev.svg
+#	new file:   public/fonts/ecoicons/ecoicons.eot
+#	new file:   public/fonts/ecoicons/ecoicons.svg
+#	new file:   public/fonts/ecoicons/ecoicons.ttf
+#	new file:   public/fonts/ecoicons/ecoicons.woff
+#	new file:   public/fonts/ecoicons/license.txt
+#	new file:   public/icons/backup.svg
+#	new file:   public/icons/cpu1.svg
+#	new file:   public/icons/data29.svg
+#	new file:   public/icons/data6.svg
+#	new file:   public/icons/documents.svg
+#	new file:   public/icons/hierarchical5.svg
+#	new file:   public/icons/random.svg
+#	new file:   public/icons/tower7.svg
+#	new file:   public/js/.DS_Store
+#	new file:   public/js/Chart.js
+#	new file:   public/js/Gruntfile.js
+#	new file:   public/js/bootstrap.js
+#	new file:   public/js/classie.js
+#	new file:   public/js/config.js
+#	new file:   public/js/d3.js
+#	new file:   public/js/gnmenu.js
+#	new file:   public/js/libs/cpu.js
+#	new file:   public/js/main.js
+#	new file:   public/js/modernizr.custom.js
+#	new file:   public/js/raphael.2.1.0.min.js
+#	new file:   public/js/tabs.js
+#	new file:   public/js/tabs_v2.js
+#	new file:   public/js/toastr.js
+#	new file:   public/js/toastr.min.js
+#	new file:   public/main.js
+#	new file:   routes/routesApi.js
+#	new file:   routes/routesWeb.js
+#	new file:   views/config.ejs
+#	new file:   views/cpu.ejs
+#	new file:   views/demo.ejs
+#	new file:   views/disk.ejs
+#	new file:   views/index.ejs
+#	new file:   views/layout.ejs
+#	new file:   views/logs.ejs
+#	new file:   views/network.ejs
+#	new file:   views/ram.ejs
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    MonitorJS
+#	modified:   log.log
+#	deleted:    public/css/.DS_Store
+#	deleted:    public/js/.DS_Store
+#

@@ -1,0 +1,11 @@
+Fix 
+============
+some bugs and refactoring some things (4% cpu is too high)
+
+feature 
+============
+Email when overload.
+Notification
+Save stat every 10 sec in bdd.
+Check logs (written in monitor.conf).
+Support of multiple database systems.
