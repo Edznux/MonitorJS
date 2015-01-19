@@ -1,6 +1,7 @@
 Fix 
 ============
 some bugs and refactoring some things (4% cpu is too high)
+(client side js => very very crappy)
 
 feature 
 ============
