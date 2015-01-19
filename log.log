@@ -15,7 +15,6 @@
 #	new file:   lib/sendApi.js
 #	new file:   log.log
 #	new file:   package.json
-#	new file:   public/css/.DS_Store
 #	new file:   public/css/ajouts.css
 #	new file:   public/css/boot.css
 #	new file:   public/css/component.css
@@ -30,7 +29,6 @@
 #	new file:   public/css/tabs.css
 #	new file:   public/css/toastr.css
 #	new file:   public/css/toastr.min.css
-#	new file:   public/fonts/.DS_Store
 #	new file:   public/fonts/codropsicons/.DS_Store
 #	new file:   public/fonts/codropsicons/codropsicons.eot
 #	new file:   public/fonts/codropsicons/codropsicons.svg
@@ -52,7 +50,6 @@
 #	new file:   public/icons/hierarchical5.svg
 #	new file:   public/icons/random.svg
 #	new file:   public/icons/tower7.svg
-#	new file:   public/js/.DS_Store
 #	new file:   public/js/Chart.js
 #	new file:   public/js/Gruntfile.js
 #	new file:   public/js/bootstrap.js
@@ -87,6 +84,4 @@
 #
 #	deleted:    MonitorJS
 #	modified:   log.log
-#	deleted:    public/css/.DS_Store
-#	deleted:    public/js/.DS_Store
 #
