@@ -7,11 +7,11 @@ var express = require('express'),
     engine = require('ejs-locals'),
     compress = require('compression');
 
-var version = "0.0.1";
+var version = "0.0.2";
 
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public'));
-app.use(compress())
+app.use(compress());
 io.set('log level', 1);
 app.set('views', __dirname + '/views');
 app.engine('ejs', engine);
@@ -54,6 +54,7 @@ fs.readdir("./lib/addon", function(err,files){
 
 //routing there, if you don't wan't our web interface, you can comment line with routeWeb
 require("./routes/routesWeb")(app);
+require("./routes/routesAnalytics")(app);
 require("./routes/routesApi")(app);
 
 io.sockets.on('connection', function(socket) {
