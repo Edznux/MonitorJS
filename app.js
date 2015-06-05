@@ -20,7 +20,7 @@ var conf = require("./config");
 
 /**
  *Database schema mongodb
- */
+ */ 
     // mongoose.connect('localhost', 'monitor');
     // var db = mongoose.connection;
     // db.on('error', console.error.bind(console, 'connection error:'));
