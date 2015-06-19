@@ -73,4 +73,13 @@ module.exports = function(app){
 	        ip:conf.IP
 	    });
 	});
+	app.get('/analytics', function(req, res) {
+			res.render('analytics', {
+					namePage: "analytics",
+					title: "analytics",
+					clockGlobal:conf.perf.clockGlobal,
+					clockLogs: conf.perf.clockLogs,
+					ip:conf.IP
+			});
+	});
 }

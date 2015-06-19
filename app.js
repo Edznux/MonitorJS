@@ -21,14 +21,15 @@ var conf= require("./config");
 var clock= require("./lib/clock");
 
 if(conf.DB.enable){
+    mongoose.connect('mongodb://localhost:27017/monitor');
     clock.enable();
 }
 
 /**
  *Database schema mongodb
- */ 
+ */
 
-mongoose.connect('mongodb://localhost:27017/monitor');
+
 
 
 /**
@@ -44,7 +45,7 @@ var monitor = require("./lib/core.js");
 fs.readdir("./lib/addon", function(err,files){
     console.log(files);
     if(typeof files !== "undefined"){
-        for(var i=0;i<files.length;i++){  
+        for(var i=0;i<files.length;i++){
             if(files[i][0] != "_"){ // ignore file starting with _ char (disable module)
                 require("./lib/addon/"+files[i])(monitor);
                 console.log("module "+files[i] +" loaded");
