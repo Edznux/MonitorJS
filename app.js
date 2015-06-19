@@ -5,7 +5,8 @@ var express = require('express'),
     server = http.createServer(app),
     io = require('socket.io').listen(server),
     engine = require('ejs-locals'),
-    compress = require('compression');
+    compress = require('compression'),
+    mongoose = require('mongoose');
 
 var version = "0.0.2";
 
@@ -16,21 +17,25 @@ io.set('log level', 1);
 app.set('views', __dirname + '/views');
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-var conf = require("./config");
+var conf= require("./config");
+var clock= require("./lib/clock");
+
+if(conf.DB.enable){
+    clock.enable();
+}
 
 /**
  *Database schema mongodb
  */ 
-    // mongoose.connect('localhost', 'monitor');
-    // var db = mongoose.connection;
-    // db.on('error', console.error.bind(console, 'connection error:'));
-    // db.once('open', function callback() {
-    //     console.log('Connected to DB');
-    // });
+
+mongoose.connect('mongodb://localhost:27017/monitor');
+
+
 /**
 *Database schema MySQL
 */
 // var query = require("./lib/database/mysql")();
+
 var monitor = require("./lib/core.js");
 
 /**

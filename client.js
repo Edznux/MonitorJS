@@ -14,16 +14,16 @@ window.onload=function(){
 	pixel.style.height='1px';
 	pixel.style.width='1px';
 	pixel.src="http://"+ma_url+"/pixel.png?p="+path+
-											   "&website="+website+
-											   "&referer="+referer+
-											   '&cookie='+cookie+
-											   "&pn="+pn+
-											   "&vp="+vp+
-											   "&sr="+sr+
-											   "&ul="+ul+
-											   "&lt="+loadTime+
-											   "&lt="+DOMTime+
-											   "&ts="+Date.now();
+											"&website="+website+
+											"&referer="+referer+
+											"&cookie="+cookie+
+											"&pn="+pn+
+											"&vp="+vp+
+											"&sr="+sr+
+											"&ul="+ul+
+											"&lt="+loadTime+
+											"&lt="+DOMTime+
+											"&ts="+Date.now();
 	document.body.appendChild(pixel);
 	console.log('MonitorJS Analytics system loaded');
-}
+};

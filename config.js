@@ -1,5 +1,5 @@
-var config 	={};
-config.DB 	={};
+var config 		={};
+config.DB 		={};
 config.auth 	={};
 config.notify 	={};
 config.perf 	={};
@@ -14,7 +14,8 @@ config.auth.login 	= "login";
 config.auth.password= "password";
 
 /* Database configuration for saving all data */
-config.DB.type 		= "mysql";
+config.DB.enable 	= true;
+config.DB.type 		= "mongodb";
 config.DB.host 		= "localhost";
 config.DB.user 		= "user";
 config.DB.database 	= "monitor";
@@ -26,6 +27,6 @@ config.notify.email = "yourmail@example.com";
 /* performance settings */
 config.perf.clockGlobal = 1000; // 2sec
 config.perf.clockLogs 	= 30000; // 30sec for reloading logs files
-config.perf.clockSave 	= 60000; // 60sec for saving in database
+config.perf.clockSave 	= 10000; // 10sec for saving in database
 
 module.exports = config;
