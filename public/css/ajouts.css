@@ -383,7 +383,7 @@ input[type="checkbox"] {
 
 .fa-arrow-down, .fa-arrow-up {
 	color: #34495E;
-	position: relative; 
+	position: relative;
 	top: 10px;
 	left: 12px;
 }
@@ -487,3 +487,22 @@ ul.gn-menu > li > a:hover {
 #green { background-color: green; box-shadow: 0px 0px 1px green;}
 #orange { background-color: orange; box-shadow: 0px 0px 1px orange;}
 #red { background-color: red; box-shadow: 0px 0px 1px red; margin-right: 40px;}
+
+
+#choix_annees {
+  text-align: right;
+}
+
+#boite_analytics .btn-group {
+  margin-bottom: 20px;
+}
+
+#boite_analytics .btn {
+  border-radius: 0;
+  border: 3px solid #E8E8E8;
+}
+
+#boite_analytics .btn:hover {
+  background: #34495E;
+  color: #F4F4F4;
+}
