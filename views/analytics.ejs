@@ -1,12 +1,12 @@
 <% layout('layout') -%>
 <div class="home" id="boite_analytics">
-	<h1>Analytics</h1>
+	<h1 id="analytics_title">Analytics</h1>
 	<!-- table>(thead>tr>th{col $}*8)+tbody>(tr>td{box 1.$}*8)+(tr>td{box 2.$}*8)+(tr>td{box 3.$}*8)+(tr>td{box 4.$}*8)+(tr>td{box 5.$}*8)+(tr>td{box 6.$}*8)+(tr>td{box 7.$}*8)+(tr>td{box 8.$}*8) -->
 	<div id="choix_annees">
 		<div class="btn-group" role="group" aria-label="...">
-		  <button type="button" class="btn btn-default">Jour</button>
-		  <button type="button" class="btn btn-default">Mois</button>
-		  <button type="button" class="btn btn-default">Année</button>
+		  <button id="b1" type="button" class="btn btn-default" onclick="changeDate(this);">Jour</button>
+		  <button id="b2" type="button" class="btn btn-default" onclick="changeDate(this);">Mois</button>
+		  <button id="b3" type="button" class="btn btn-default" onclick="changeDate(this);">Année</button>
 		</div>
 	</div>
 	<table>

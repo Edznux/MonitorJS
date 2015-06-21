@@ -103,22 +103,22 @@ function writeUptime(time){
 
 function setValues(route,items,callback){
     items.forEach(function(element,index){
-        $.ajax({ 
-            type: 'GET', 
-            url: '/api/raw/'+route+"/"+element, 
+        $.ajax({
+            type: 'GET',
+            url: '/api/raw/'+route+"/"+element,
             dataType: 'json',
-            success: function (data) { 
+            success: function (data) {
                 callback(data)
             }
         });
     });
 }
 function getAlert(callback){
-    $.ajax({ 
-        type: 'GET', 
+    $.ajax({
+        type: 'GET',
         url: '/api/alert',
         dataType: 'json',
-        success: function (data) { 
+        success: function (data) {
             callback(data)
         }
     });
@@ -248,14 +248,14 @@ switch (page) {
             break;
 
         case "cpu":
-            setValues("cpu",["stats"],function(d){ 
+            setValues("cpu",["stats"],function(d){
                 document.getElementById('cpuInfos').innerHTML="Core Numbers :" + d.length +"<br>Processor Name :" + d[0].model;
             });
             setInterval(function(){
-                setValues("cpu",["stats"],function(d){ 
+                setValues("cpu",["stats"],function(d){
                     drawnTable("cpuStatsTable",d);
                 });
-                setValues("cpu",["infos"],function(d){ 
+                setValues("cpu",["infos"],function(d){
                     drawnTable("cpuInfosTable",d);
                 });
             },clockGlobal);
@@ -269,8 +269,8 @@ switch (page) {
                 setValues("memory",["all"],function(d){
                     drawnTable("memoryTable",d);
                 });
-                setValues("memory",["total"],function(total){ 
-                   setValues("memory",["free"],function(free){ 
+                setValues("memory",["total"],function(total){
+                   setValues("memory",["free"],function(free){
                     memused =total-free;
                     drawChart("memoryChart","Bar",converter([memused],"go"));
                     });
@@ -305,8 +305,8 @@ switch (page) {
                     writeValue("cpuValue",Math.round(value*100)/100+"%");
                 });
 
-                setValues("memory",["total"],function(total){ 
-                   setValues("memory",["free"],function(free){ 
+                setValues("memory",["total"],function(total){
+                   setValues("memory",["free"],function(free){
                     memused =total-free;
                     drawChart("memoryChart","Bar",converter([memused],"go"));
                     });
@@ -317,7 +317,7 @@ switch (page) {
                         drawChart("networkChart","Line",converter([tx,rx],"go"));
                     });
                 });
-                
+
                 setValues("disk",["all"],function(d){
                     drawnTable("diskTable",d);
                 });
@@ -362,4 +362,32 @@ function initLogs() {
             hello: "world"
         });
     }, clockLogs);
+}
+
+/* Analytics */
+
+function setClear() {
+  var a =	document.getElementsByClassName('btn');
+  for (var i = 0; i < a.length; i++) {
+    a[i].style.color = "#34495E";
+    a[i].style.background = "#F4F4F4";
+  }
+}
+
+function setValue(id, v) {
+  setClear();
+  document.getElementById('analytics_title').innerHTML = "Analytics of the " + v;
+  document.getElementById(id).style.color = "#F4F4F4";
+  document.getElementById(id).style.background = "#34495E";
+}
+
+function changeDate(choix) {
+  switch (choix.id) {
+    case "b1": setValue('b1', 'day');
+      break;
+    case "b2": setValue('b2', 'month');
+      break;
+    case "b3": setValue('b3', 'year');
+      break;
+  }
 }
