@@ -1,0 +1,1 @@
+var app=angular.module("monitor",["ngMaterial","ui-router","chart.js"]);app.controller("AppCtrl",["$scope","$mdSidenav",function(a,b){a.toggleSidenav=function(a){b(a).toggle()}}]);
