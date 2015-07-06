@@ -1,5 +1,5 @@
 app.controller('ChartCtrl', ['$scope', '$mdSidenav','socket','api', function($scope, $mdSidenav,socket,api){
-
+	Chart.defaults.global.animation = false;
 	$scope.labels = [];
 	$scope.series = ['Free Memory'];
 	$scope.data = [
