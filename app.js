@@ -11,14 +11,19 @@ var express = require('express'),
 var version = "0.0.2";
 
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(__dirname + '/public'));
+
+app.use(express.static(__dirname + '/app'));
+
+// app.use(express.static(__dirname + '/public'));
+
 app.use(compress());
 io.set('log level', 1);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/app');
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 var conf= require("./config");
 var clock= require("./lib/clock");
+
 
 if(conf.DB.enable){
     mongoose.connect('mongodb://localhost:27017/monitor');
@@ -28,8 +33,6 @@ if(conf.DB.enable){
 /**
  *Database schema mongodb
  */
-
-
 
 
 /**
