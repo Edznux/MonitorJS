@@ -1,11 +1,4 @@
-app.controller('AppCtrl', ['$scope', '$mdSidenav','socket', function($scope, $mdSidenav,socket){
-	$scope.now = function(){
-			var heure =new Date();
-			var h=(heure.getHours()<10)?("0"+heure.getHours()):(heure.getHours());
-			var m=(heure.getMinutes()<10)?("0"+heure.getMinutes()):(heure.getMinutes());
-			var s=(heure.getSeconds()<10)?("0"+heure.getSeconds()):(heure.getSeconds());
-			return h+":"+m+":"+s;
-	};
+app.controller('AppCtrl', ['$scope','$rootScope', '$mdSidenav','socket', function($scope,$rootScope, $mdSidenav,socket){
 
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();

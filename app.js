@@ -90,6 +90,7 @@ io.sockets.on('connection', function(socket) {
             });
     });
 });
-server.listen(3333, function() {
-    console.log('==============Web server listening on port 3333===============\n=============== MonitorJS version ' + version +" ===================");
+var port = process.env.PORT || 3333;
+server.listen(port, function() {
+    console.log('==============Web server listening on '+port+' port ===============\n=============== MonitorJS version ' + version +" ===================");
 });

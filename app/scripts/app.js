@@ -1,5 +1,14 @@
 var app = angular.module('monitor', ['ngMaterial','ui.router','chart.js']);
+app.run(function($rootScope) {
+	$rootScope.now = function(){
+			var heure =new Date();
+			var h=(heure.getHours()<10)?("0"+heure.getHours()):(heure.getHours());
+			var m=(heure.getMinutes()<10)?("0"+heure.getMinutes()):(heure.getMinutes());
+			var s=(heure.getSeconds()<10)?("0"+heure.getSeconds()):(heure.getSeconds());
+			return h+":"+m+":"+s;
+	};
 
+});
 /*
 * Routes for the monitoring system
 */
