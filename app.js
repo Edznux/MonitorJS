@@ -26,13 +26,6 @@ if(conf.DB.enable){
 }
 
 /**
- *Database schema mongodb
- */
-
-
-
-
-/**
 *Database schema MySQL
 */
 // var query = require("./lib/database/mysql")();

@@ -14,7 +14,7 @@ config.auth.login 	= "login";
 config.auth.password= "password";
 
 /* Database configuration for saving all data */
-config.DB.enable 	= false;
+config.DB.enable 	= true;
 config.DB.type 		= "mongodb";
 config.DB.host 		= "localhost";
 config.DB.user 		= "user";
