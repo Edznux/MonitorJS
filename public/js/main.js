@@ -318,7 +318,7 @@ switch (page) {
                     });
                 });
 
-                setValues("disk",["all"],function(d){
+                setValues("disk",["free"],function(d){
                     drawnTable("diskTable",d);
                 });
 
