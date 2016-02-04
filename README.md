@@ -33,6 +33,7 @@ MonitorJS is NodeJS based monitoring tool.
 - Express
 - Socket.io
 
+## Licence
 
 The MIT License (MIT)
 
