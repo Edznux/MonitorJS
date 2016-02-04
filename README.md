@@ -1,20 +1,37 @@
 # MonitorJS
 
 MonitorJS is NodeJS based monitoring tool.
-===
 
-Features
----
+## Features
 
- - Draw graphs for CPU,RAM,Disk, and Network uses.
- - Provide simple API.
- - Online logs readers (previously set in config)
- 
-TODO:
----
- - Create and store values in DB
- - Real time network's stats
+### API
 
+- [ ] HTTP REST API
+	- [ ] Memory
+	- [ ] CPU
+	- [ ] Networking
+	- [ ] Disk
+- [ ] Websocket API
+	- [ ] Memory
+	- [ ] CPU
+	- [ ] Networking
+	- [ ] Disk
+
+### Analytics
+
+- [ ] User
+	+ [ ] Browser
+	+ [ ] Timing (loading time, DOM rendering, etc...)
+
+### Misc
+
+- [ ] Installer
+- [ ] Full Windows support
+
+## Dependencies
+
+- Express
+- Socket.io
 
 
 The MIT License (MIT)
@@ -38,4 +55,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
