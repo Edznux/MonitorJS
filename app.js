@@ -1,12 +1,14 @@
 var express = require('express'),
+    util = require('util'),
+    async = require('async'),
     http = require('http'),
     app = express(),
     fs = require('fs'),
     server = http.createServer(app),
-    io = require('socket.io').listen(server),
+    socket = require('socket.io'),
+    io = socket.listen(server),
     engine = require('ejs-locals'),
-    compress = require('compression'),
-    mongoose = require('mongoose');
+    compress = require('compression');    // mongoose = require('mongoose');
 
 var version = "0.0.2";
 
@@ -21,8 +23,8 @@ var conf= require("./config");
 var clock= require("./lib/clock");
 
 if(conf.DB.enable){
-    mongoose.connect('mongodb://localhost:27017/monitor');
-    clock.enable();
+    // mongoose.connect('mongodb://localhost:27017/monitor');
+    // clock.enable();
 }
 
 /**
@@ -55,30 +57,9 @@ fs.readdir("./lib/addon", function(err,files){
 require("./routes/routesWeb")(app);
 require("./routes/routesAnalytics")(app);
 require("./routes/routesApi")(app);
+require("./routes/routesWebSocket")(app,io);
 
-io.sockets.on('connection', function(socket) {
-    socket.on('logs', function(data) {
-        checkLogs(function(data) {
-            socket.emit('logs', {
-                logsName: conf.logsFiles,
-                logs: data
-            });
-        });
-    });
-    socket.on('all', function(data) {
-        var clients = io.sockets.clients().length;
-        var heure =new Date();
-        var h=(heure.getHours()<10)?("0"+heure.getHours()):(heure.getHours());
-        var m=(heure.getMinutes()<10)?("0"+heure.getMinutes()):(heure.getMinutes());
-        var s=(heure.getSeconds()<10)?("0"+heure.getSeconds()):(heure.getSeconds());
-        heure = h+":"+m+":"+s;
-        // console.log("active user(s) using monitor :" + clients);
-            socket.emit('clients', {
-                clients:clients,
-                heure:heure
-            });
-    });
-});
-server.listen(3333, function() {
+
+server.listen(3000, function() {
     console.log('==============Web server listening on port 3333===============\n=============== MonitorJS version ' + version +" ===================");
 });

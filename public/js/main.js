@@ -89,6 +89,7 @@ function maskIt(i) {
 }
 
 socket.on('clients', function(data) {
+    console.log(data);
     if(data.clients > 1){
         document.getElementById('number').innerHTML="CONNECTED USERS : ";
     }
@@ -105,7 +106,7 @@ function setValues(route,items,callback){
     items.forEach(function(element,index){
         $.ajax({
             type: 'GET',
-            url: '/api/raw/'+route+"/"+element,
+            url: '/api/'+route+"/"+element,
             dataType: 'json',
             success: function (data) {
                 callback(data)
@@ -238,6 +239,7 @@ dataNet = {
 };
 
 var datenow = timeNow();
+clockGlobal = 30000;
 switch (page) {
         case "disk":
             setInterval(function(){
@@ -346,11 +348,11 @@ setInterval(function(){
 /**
  * Clock for update server tickrate, without this, refresh of the server will be 10sec
  */
-setInterval(function() {
-    socket.emit("all", {
-        hello: "world"
-    });
-}, 1000);
+// setInterval(function() {
+//     socket.emit("all", {
+//         hello: "world"
+//     });
+// }, 1000);
 
 function initLogs() {
     socket.emit("logs", {

@@ -1,4 +1,5 @@
 var conf = require("../config");
+
 module.exports = function(app){
 	
 	function sendApi(route,item,req,res){
@@ -14,6 +15,7 @@ module.exports = function(app){
 			res.send(JSON.stringify({'error':"INVALID type"}));
 		}
 	}
+
 	function setConf(type,name,req,res){
 /*		console.log(name);
 		console.log(value);
@@ -34,18 +36,21 @@ module.exports = function(app){
 			}
 		}
 	}
-
-	app.get('/api/raw/:parts/:name', function(req, res) {
+	app.get('/api/:parts/:name', function(req, res) {
 	   //call "sendApi" function with parts and name of object requested
 	   sendApi(req.params.parts,req.params.name,req,res); 
 	});
+
 	app.get('/api', function(req, res) {
 		res.send('ok');
 	});
+
 	app.get("/api/alert",function(req, res) {
 	   res.send(JSON.stringify({success: 'action succeed' ,info:'Your server have been rebooted', warning : 'Your server is heavily charged', error:'Your server is actually OVERLOADED'}));
 	});
+
 	app.post('/api/config',function(req, res) {
 	   setConf(req.params.type,req.params.name,req,res);
 	});
+
 };
