@@ -15,6 +15,10 @@ var version = "0.0.2";
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public'));
 app.use(compress());
+app.use(function (req, res, next) {
+  res.contentType('application/json');
+  next();
+});
 io.set('log level', 1);
 app.set('views', __dirname + '/views');
 app.engine('ejs', engine);

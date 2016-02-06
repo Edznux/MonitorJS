@@ -1,7 +1,7 @@
 var supertest = require("supertest");
 var should = require("should");
 
-var server = supertest.agent("http://localhost:3333");
+var server = supertest.agent("http://127.0.0.1:3000");
 
 describe("HTTP API unit test",function(){
 
@@ -39,7 +39,7 @@ describe("HTTP API unit test",function(){
 		.end(function(err,res){
 			res.status.should.equal(200);
 			res.body.success.should.equal(true);
-			res.body.data.should.be.a("number");
+			res.body.data.should.be.a.Number;
 			done();
 		});
 	});
@@ -52,7 +52,59 @@ describe("HTTP API unit test",function(){
 		.end(function(err,res){
 			res.status.should.equal(200);
 			res.body.success.should.equal(true);
-			res.body.data.should.be.a("number");
+			res.body.data.should.be.a.Number;
+			done();
+		});
+	});
+
+	it("should return cached memory infos",function(done){
+		server
+		.get("/api/memory/cached")
+		.expect("Content-type",/json/)
+		.expect(200) // HTTP OK
+		.end(function(err,res){
+			res.status.should.equal(200);
+			res.body.success.should.equal(true);
+			res.body.data.should.be.a.Number;
+			done();
+		});
+	});
+
+	it("should return buffers memory infos",function(done){
+		server
+		.get("/api/memory/buffers")
+		.expect("Content-type",/json/)
+		.expect(200) // HTTP OK
+		.end(function(err,res){
+			res.status.should.equal(200);
+			res.body.success.should.equal(true);
+			res.body.data.should.be.a.Number;
+			done();
+		});
+	});
+
+	it("should return active memory infos",function(done){
+		server
+		.get("/api/memory/active")
+		.expect("Content-type",/json/)
+		.expect(200) // HTTP OK
+		.end(function(err,res){
+			res.status.should.equal(200);
+			res.body.success.should.equal(true);
+			res.body.data.should.be.a.Number;
+			done();
+		});
+	});
+
+	it("should return inactive memory infos",function(done){
+		server
+		.get("/api/memory/inactive")
+		.expect("Content-type",/json/)
+		.expect(200) // HTTP OK
+		.end(function(err,res){
+			res.status.should.equal(200);
+			res.body.success.should.equal(true);
+			res.body.data.should.be.a.Number;
 			done();
 		});
 	});
@@ -65,35 +117,34 @@ describe("HTTP API unit test",function(){
 		.end(function(err,res){
 			res.status.should.equal(200);
 			res.body.success.should.equal(true);
-			res.body.data.should.be.a("object");
+			res.body.data.should.be.a.Object;
 			done();
 		});
 	});
 
-	it("should return system infos",function(done){
+	it("should return os infos",function(done){
 		server
-		.get("/api/system")
+		.get("/api/os")
 		.expect("Content-type",/json/)
 		.expect(200) // HTTP OK
 		.end(function(err,res){
 			res.status.should.equal(200);
 			res.body.success.should.equal(true);
-			res.body.data.should.be.a("string");
+			res.body.data.should.be.a.String;
 			done();
 		});
 	});
 
-	it("should return system architecture",function(done){
+	it("should return os architecture",function(done){
 		server
-		.get("/api/system/architecture")
+		.get("/api/os/architecture")
 		.expect("Content-type",/json/)
 		.expect(200) // HTTP OK
 		.end(function(err,res){
 			res.status.should.equal(200);
 			res.body.success.should.equal(true);
-			res.body.data.should.be.a("string");
+			res.body.data.should.be.a.String;
 			done();
 		});
 	});
-
 });
