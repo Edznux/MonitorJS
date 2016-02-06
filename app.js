@@ -1,24 +1,20 @@
 var express = require('express'),
-    util = require('util'),
-    async = require('async'),
-    http = require('http'),
-    app = express(),
-    fs = require('fs'),
-    server = http.createServer(app),
-    socket = require('socket.io'),
-    io = socket.listen(server),
-    engine = require('ejs-locals'),
-    compress = require('compression');    // mongoose = require('mongoose');
+    util    = require('util'),
+    async   = require('async'),
+    http    = require('http'),
+    app     = express(),
+    fs      = require('fs'),
+    server  = http.createServer(app),
+    socket  = require('socket.io'),
+    io      = socket.listen(server),
+    engine  = require('ejs-locals'),
+    compress= require('compression');    // mongoose = require('mongoose');
 
 var version = "0.0.2";
 
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public'));
 app.use(compress());
-app.use(function (req, res, next) {
-  res.contentType('application/json');
-  next();
-});
 io.set('log level', 1);
 app.set('views', __dirname + '/views');
 app.engine('ejs', engine);

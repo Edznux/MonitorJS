@@ -16,6 +16,7 @@ MonitorJS is NodeJS based monitoring tool.
 	- [ ] CPU
 	- [ ] Networking
 	- [ ] Disk
+	- [ ] Alert
 
 ### Analytics
 
@@ -32,6 +33,7 @@ MonitorJS is NodeJS based monitoring tool.
 
 - Express
 - Socket.io
+- Async
 
 ## Licence
 

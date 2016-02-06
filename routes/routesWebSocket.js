@@ -40,11 +40,13 @@ module.exports = function(app, io){
         var items = {};
         for(var route in monitor) {
             for(var item in monitor[route]){
-                items[route+"/"+item] = monitor[route][item];
+                items[route+""+item] = monitor[route][item];
             }
         }
         async.parallel(items,
-        function(err,results){
+        function(err, results){
+            console.log("err === ",err);
+            console.log("result ===",results);
             cb(results);
         });
     }
