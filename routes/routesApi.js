@@ -26,7 +26,6 @@ module.exports = function(app){
 		console.log(conf.IP);
 		conf.IP = value;
 */
-		console.log(process.env);
 		if(conf.hasOwnProperty(type)){
 			if(conf[type].hasOwnProperty(name)){
 				if(process.env[type]===undefined){
@@ -35,7 +34,6 @@ module.exports = function(app){
 					// process.env[type][name]
 				}else{
 					process.env[type][name] = JSON.stringify(req.body)[name] ;
-					console.log(req.body[name]);
 				}
 			}
 		}

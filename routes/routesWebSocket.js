@@ -45,8 +45,6 @@ module.exports = function(app, io){
         }
         async.parallel(items,
         function(err, results){
-            console.log("err === ",err);
-            console.log("result ===",results);
             cb(results);
         });
     }

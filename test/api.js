@@ -1,5 +1,6 @@
 var supertest = require("supertest");
 var should = require("should");
+var io = require('socket.io-client');
 
 var server = supertest.agent("http://127.0.0.1:3000");
 
