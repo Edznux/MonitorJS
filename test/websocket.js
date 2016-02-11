@@ -128,19 +128,19 @@ describe("WebSocket API unit test",function(){
 		});
 		
 		it("should return disk usage", function(done){
-			DATA.data.used.success.should.be.equal(true);
-			DATA.data.used.data.should.be.type("object");
-			for(var i in DATA.data.used.data){
-				DATA.data.used.data[i].should.be.type("number");
+			DATA.data.diskused.success.should.be.equal(true);
+			DATA.data.diskused.data.should.be.type("object");
+			for(var i in DATA.data.diskused.data){
+				DATA.data.diskused.data[i].should.be.type("number");
 			}
 			done();
 		});
 
 		it("should return disk usage percentage", function(done){
-			DATA.data.use.success.should.be.equal(true);
-			DATA.data.use.data.should.be.type("object");
-			for(var i in DATA.data.use.data){
-				DATA.data.use.data[i].should.be.type("number");
+			DATA.data.diskuse.success.should.be.equal(true);
+			DATA.data.diskuse.data.should.be.type("object");
+			for(var i in DATA.data.diskuse.data){
+				DATA.data.diskuse.data[i].should.be.type("number");
 			}
 			done();
 		});
@@ -184,8 +184,8 @@ describe("WebSocket API unit test",function(){
 		});
 
 		it("should return interfaces", function(done){
-			DATA.data.networktx.success.should.be.equal(true);
-			DATA.data.networktx.data.should.be.type("object");
+			DATA.data.networkinterfaces.success.should.be.equal(true);
+			DATA.data.networkinterfaces.data.should.be.type("object");
 			done();
 		});
 	});
