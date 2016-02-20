@@ -32,7 +32,7 @@ if(conf.DB.enable){
 */
 // var query = require("./lib/database/mysql")();
 
-var monitor = require("./lib/core.js");
+app.monitor = require("./lib/core.js");
 
 /**
 * Addons Loader
@@ -42,7 +42,7 @@ fs.readdir("./lib/addon", function(err,files){
     if(typeof files !== "undefined"){
         for(var i=0;i<files.length;i++){
             if(files[i][0] != "_"){ // ignore file starting with _ char (disable module)
-                require("./lib/addon/"+files[i])(monitor);
+                require("./lib/addon/"+files[i])(app);
                 console.log("module "+files[i] +" loaded");
             }else{
                 console.log("module "+files[i] +" NOT loaded");

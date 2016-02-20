@@ -42,9 +42,9 @@ module.exports = function(app){
 		res.send(JSON.stringify({'success' : true, 'data' : "Documentation available at https://github.com/edznux/monitorjs"}));
 	});
 
+	//call "sendApi" function with parts and name of object requested
 	app.get('/api/:parts/:name', function(req, res) {
-		//call "sendApi" function with parts and name of object requested
-		sendApi(req.params.parts, req.params.name, req, res); 
+		sendApi(req.params.parts, req.params.name, req, res);
 	});
 
 	app.get("/api/alert",function(req, res) {

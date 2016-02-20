@@ -1,6 +1,5 @@
 var socket = require('socket.io'),
-    http = require('http'),
-    async = require('async');
+    http = require('http');
 
 module.exports = function(app, io){
 
@@ -26,7 +25,11 @@ module.exports = function(app, io){
         var s=(heure.getSeconds()<10)?("0"+heure.getSeconds()):(heure.getSeconds());
         heure = h+":"+m+":"+s;
         // console.log("active user(s) using monitor :" + clients);
-        getAllData(function(data){
+        getAllData(function(err, data){
+            if(err){
+                console.log(err);
+                throw err;
+            }
             io.sockets.emit('clients', {
                 clients:clients,
                 heure:heure,
@@ -36,22 +39,33 @@ module.exports = function(app, io){
     }
 
     function getAllData(cb){
+        var nbCallback = 0;
         var data={};
-        var items = {};
+        var obj = {};
         for(var route in monitor) {
+            obj[route] = {};
             for(var item in monitor[route]){
-                items[route+""+item] = monitor[route][item];
+                nbCallback++;
+                (function (route,item){
+                    monitor[route][item](function(err,data){
+                    obj[route][item] = data;
+                        if(err){
+                            console.log(err);
+                            cb(err, null);
+                        }
+                        nbCallback--;
+                        if(nbCallback == 0){
+                            cb(null, obj);
+                        }
+                    });
+                })(route,item);
             }
         }
-        async.parallel(items,
-        function(err, results){
-            cb(results);
-        });
     }
 
     setInterval(function(){
         sendDataWs();
-    },5000);
+    },10000);
 
     // websocketApi();
 };

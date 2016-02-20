@@ -33,7 +33,7 @@ describe("WebSocket API unit test",function(){
 
 		it("should return number of clients connected",function(done){
 			DATA.clients.should.be.type("number");
-			DATA.clients.should.be.above(1);
+			DATA.clients.should.be.above(0);
 			done();
 		});
 	});
@@ -41,124 +41,124 @@ describe("WebSocket API unit test",function(){
 	describe("Test CPU", function(){
 		
 		it("should return cpu stats data",function(done){
-			// console.log(DATA.data.cpuinfos.data);
-			DATA.data.cpustats.success.should.equal(true);
-			DATA.data.cpustats.data.should.be.type("object");
-			DATA.data.cpustats.data[0].model.should.be.type("string");
+			// console.log(DATA.data.cpu.infos.data);
+			DATA.data.cpu.stats.success.should.equal(true);
+			DATA.data.cpu.stats.data.should.be.type("object");
+			DATA.data.cpu.stats.data[0].model.should.be.type("string");
 			done();
 		});
 
 		it("should return cpu uptime", function(done){
-			DATA.data.cpuuptime.success.should.equal(true);
-			DATA.data.cpuuptime.data.should.be.type("number");
-			DATA.data.cpuuptime.data.should.be.a.above(0);
+			DATA.data.cpu.uptime.success.should.equal(true);
+			DATA.data.cpu.uptime.data.should.be.type("number");
+			DATA.data.cpu.uptime.data.should.be.a.above(0);
 			done();
 		});
 		
 		it("should return cpu times", function(done){
-			DATA.data.cpustats.data[0].times.should.be.type("object");
-			DATA.data.cpustats.data[0].times.should.be.type("object");
+			DATA.data.cpu.stats.data[0].times.should.be.type("object");
+			DATA.data.cpu.stats.data[0].times.should.be.type("object");
 
-			DATA.data.cpustats.data[0].times.user.should.be.type("number");
-			DATA.data.cpustats.data[0].times.nice.should.be.type("number");
-			DATA.data.cpustats.data[0].times.sys.should.be.type("number");
-			DATA.data.cpustats.data[0].times.idle.should.be.type("number");
-			DATA.data.cpustats.data[0].times.irq.should.be.type("number");
+			DATA.data.cpu.stats.data[0].times.user.should.be.type("number");
+			DATA.data.cpu.stats.data[0].times.nice.should.be.type("number");
+			DATA.data.cpu.stats.data[0].times.sys.should.be.type("number");
+			DATA.data.cpu.stats.data[0].times.idle.should.be.type("number");
+			DATA.data.cpu.stats.data[0].times.irq.should.be.type("number");
 			done();
 		});
 
 		it("should return cpu speed", function(done){
-			DATA.data.cpustats.data[0].speed.should.be.type("number");
-			DATA.data.cpustats.data[0].speed.should.be.above(0);
+			DATA.data.cpu.stats.data[0].speed.should.be.type("number");
+			DATA.data.cpu.stats.data[0].speed.should.be.above(0);
 			done();
 		});
 	});
 
 	describe("Test memory", function(){
 		it("should return memory free", function(done){
-			DATA.data.memoryfree.success.should.be.equal(true);
-			DATA.data.memoryfree.data.should.be.type("number");
+			DATA.data.memory.free.success.should.be.equal(true);
+			DATA.data.memory.free.data.should.be.type("number");
 			done();
 		});
 		it("should return memory total", function(done){
-			DATA.data.memorytotal.success.should.be.equal(true);
-			DATA.data.memorytotal.data.should.be.type("number");
+			DATA.data.memory.total.success.should.be.equal(true);
+			DATA.data.memory.total.data.should.be.type("number");
 			done();
 		});
 
 		it("should return memory cached", function(done){
-			DATA.data.memorycached.success.should.be.equal(true);
-			DATA.data.memorycached.data.should.be.type("number");
+			DATA.data.memory.cached.success.should.be.equal(true);
+			DATA.data.memory.cached.data.should.be.type("number");
 			done();
 		});
 		it("should return memory buffers", function(done){
-			DATA.data.memorybuffers.success.should.be.equal(true);
-			DATA.data.memorybuffers.data.should.be.type("number");
+			DATA.data.memory.buffers.success.should.be.equal(true);
+			DATA.data.memory.buffers.data.should.be.type("number");
 			done();
 		});
 		it("should return memory inactive", function(done){
-			DATA.data.memoryinactive.success.should.be.equal(true);
-			DATA.data.memoryinactive.data.should.be.type("number");
+			DATA.data.memory.inactive.success.should.be.equal(true);
+			DATA.data.memory.inactive.data.should.be.type("number");
 			done();
 		});
 		it("should return memory active", function(done){
-			DATA.data.memoryactive.success.should.be.equal(true);
-			DATA.data.memoryactive.data.should.be.type("number");
+			DATA.data.memory.active.success.should.be.equal(true);
+			DATA.data.memory.active.data.should.be.type("number");
 			done();
 		});
 	});
 	describe("Test disk", function(){
 		
 		it("should return disk available", function(done){
-			DATA.data.diskavail.success.should.be.equal(true);
-			DATA.data.diskavail.data.should.be.type("object");
-			for(var i in DATA.data.diskavail.data){
-				DATA.data.diskavail.data[i].should.be.type("number");
+			DATA.data.disk.avail.success.should.be.equal(true);
+			DATA.data.disk.avail.data.should.be.type("object");
+			for(var i in DATA.data.disk.avail.data){
+				DATA.data.disk.avail.data[i].should.be.type("number");
 			}
 			done();
 		});
 
 		it("should return disk size", function(done){
-			DATA.data.disksize.success.should.be.equal(true);
-			DATA.data.disksize.data.should.be.type("object");
-			for(var i in DATA.data.disksize.data){
-				DATA.data.disksize.data[i].should.be.type("number");
+			DATA.data.disk.size.success.should.be.equal(true);
+			DATA.data.disk.size.data.should.be.type("object");
+			for(var i in DATA.data.disk.size.data){
+				DATA.data.disk.size.data[i].should.be.type("number");
 			}
 			done();
 		});
 		
 		it("should return disk usage", function(done){
-			DATA.data.diskused.success.should.be.equal(true);
-			DATA.data.diskused.data.should.be.type("object");
-			for(var i in DATA.data.diskused.data){
-				DATA.data.diskused.data[i].should.be.type("number");
+			DATA.data.disk.used.success.should.be.equal(true);
+			DATA.data.disk.used.data.should.be.type("object");
+			for(var i in DATA.data.disk.used.data){
+				DATA.data.disk.used.data[i].should.be.type("number");
 			}
 			done();
 		});
 
 		it("should return disk usage percentage", function(done){
-			DATA.data.diskuse.success.should.be.equal(true);
-			DATA.data.diskuse.data.should.be.type("object");
-			for(var i in DATA.data.diskuse.data){
-				DATA.data.diskuse.data[i].should.be.type("number");
+			DATA.data.disk.use.success.should.be.equal(true);
+			DATA.data.disk.use.data.should.be.type("object");
+			for(var i in DATA.data.disk.use.data){
+				DATA.data.disk.use.data[i].should.be.type("number");
 			}
 			done();
 		});
 
 		it("should return disk file system", function(done){
-			DATA.data.diskfileSystem.success.should.be.equal(true);
-			DATA.data.diskfileSystem.data.should.be.type("object");
-			for(var i in DATA.data.diskfileSystem.data){
-				DATA.data.diskfileSystem.data[i].should.be.type("string");
+			DATA.data.disk.fileSystem.success.should.be.equal(true);
+			DATA.data.disk.fileSystem.data.should.be.type("object");
+			for(var i in DATA.data.disk.fileSystem.data){
+				DATA.data.disk.fileSystem.data[i].should.be.type("string");
 			}
 			done();
 		});
 
 		it("should return disk mounted", function(done){
-			DATA.data.diskmounted.success.should.be.equal(true);
-			DATA.data.diskmounted.data.should.be.type("object");
-			for(var i in DATA.data.diskmounted.data){
-				DATA.data.diskmounted.data[i].should.be.type("string");
+			DATA.data.disk.mounted.success.should.be.equal(true);
+			DATA.data.disk.mounted.data.should.be.type("object");
+			for(var i in DATA.data.disk.mounted.data){
+				DATA.data.disk.mounted.data[i].should.be.type("string");
 			}
 			done();
 		});
@@ -166,46 +166,46 @@ describe("WebSocket API unit test",function(){
 
 	describe("Test network", function(){
 		it("should return ping", function(done){
-			DATA.data.networkping.success.should.be.equal(true);
-			DATA.data.networkping.data.should.be.type("number");
+			DATA.data.network.ping.success.should.be.equal(true);
+			DATA.data.network.ping.data.should.be.type("number");
 			done();
 		});
 
 		it("should return rx packet number", function(done){
-			DATA.data.networkrx.success.should.be.equal(true);
-			DATA.data.networkrx.data.should.be.type("number");
+			DATA.data.network.rx.success.should.be.equal(true);
+			DATA.data.network.rx.data.should.be.type("number");
 			done();
 		});
 
 		it("should return tx packet number", function(done){
-			DATA.data.networktx.success.should.be.equal(true);
-			DATA.data.networktx.data.should.be.type("number");
+			DATA.data.network.tx.success.should.be.equal(true);
+			DATA.data.network.tx.data.should.be.type("number");
 			done();
 		});
 
 		it("should return interfaces", function(done){
-			DATA.data.networkinterfaces.success.should.be.equal(true);
-			DATA.data.networkinterfaces.data.should.be.type("object");
+			DATA.data.network.interfaces.success.should.be.equal(true);
+			DATA.data.network.interfaces.data.should.be.type("object");
 			done();
 		});
 	});
 	
 	describe("Test operating system", function(){
 		it("should return os architecure", function(done){
-			DATA.data.osarchitecture.success.should.be.equal(true);
-			DATA.data.osarchitecture.data.should.be.type("string");
-			DATA.data.osarchitecture.data.should.match(/x64|arm|ia32/i);
+			DATA.data.os.architecture.success.should.be.equal(true);
+			DATA.data.os.architecture.data.should.be.type("string");
+			DATA.data.os.architecture.data.should.match(/x64|arm|ia32/i);
 			done();
 		});
 		it("should return os release", function(done){
-			DATA.data.osrelease.success.should.be.equal(true);
-			DATA.data.osrelease.data.should.be.type("string");
+			DATA.data.os.release.success.should.be.equal(true);
+			DATA.data.os.release.data.should.be.type("string");
 			done();
 		});
 		it("should return os type", function(done){
-			DATA.data.ostype.success.should.be.equal(true);
-			DATA.data.ostype.data.should.be.type("string");
-			DATA.data.ostype.data.should.match(/linux|sunos|win32|freebsd|darwin/i);
+			DATA.data.os.type.success.should.be.equal(true);
+			DATA.data.os.type.data.should.be.type("string");
+			DATA.data.os.type.data.should.match(/linux|sunos|win32|freebsd|darwin/i);
 			done();
 		});
 	});
