@@ -6,16 +6,16 @@ MonitorJS is NodeJS based monitoring tool.
 
 ### API
 
-- [ ] HTTP REST API
-	- [ ] Memory
-	- [ ] CPU
-	- [ ] Networking
-	- [ ] Disk
+- [x] HTTP REST API
+	- [x] Memory
+	- [x] CPU
+	- [x] Networking
+	- [x] Disk
 - [ ] Websocket API
-	- [ ] Memory
-	- [ ] CPU
-	- [ ] Networking
-	- [ ] Disk
+	- [x] Memory
+	- [x] CPU
+	- [x] Networking
+	- [x] Disk
 	- [ ] Alert
 
 ### Analytics
@@ -28,12 +28,12 @@ MonitorJS is NodeJS based monitoring tool.
 
 - [ ] Installer
 - [ ] Full Windows support
+- [ ] Notification (browser & email)
 
 ## Dependencies
 
 - Express
 - Socket.io
-- Async
 
 ## Licence
 
