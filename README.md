@@ -1,6 +1,11 @@
 # MonitorJS
 
-MonitorJS is NodeJS based monitoring tool.
+MonitorJS is a modular, NodeJS based monitoring tool.
+
+This repository is the core of the tool.
+It allow both HTTP (Rest api) and Websocket connection to client.
+
+Each module can be found in the `/lib/addon` folder
 
 ## Features
 
@@ -29,6 +34,65 @@ MonitorJS is NodeJS based monitoring tool.
 - [ ] Installer
 - [ ] Full Windows support
 - [ ] Notification (browser & email)
+
+## Install
+
+First, clone the repo
+```
+git clone https://github.com/Edznux/MonitorJS
+```
+
+Move into the directory
+```
+cd MonitorJS
+```
+
+Install node modules
+```
+npm install
+```
+
+Start the app:
+```
+node app.js
+```
+
+### Database *(Optional)*
+
+#### Debian based distribution (ubuntu)
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+```
+[More documentation](https://docs.mongodb.org/v3.0/tutorial/install-mongodb-on-debian/ "More infos")
+
+## Addons (module)
+
+### Create
+
+Any javascript files in the `/lib/addon` folder will be auto-loaded (at startup).
+
+Requirement for each addons :
+
+```js
+module.exports = function(app){
+// do something
+}
+```
+
+### Disable
+
+Each addon is in it's own file. Disabling one addon is simple as :
+```
+cd lib/addon
+mv addonName.js _addonName.js
+```
+(on Unix based systems)
+
+## Contributions
+Feel free to PR or link your modules, i will add them to this readme
 
 ## Dependencies
 
