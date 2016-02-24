@@ -51,11 +51,11 @@ module.exports = function(app, io){
                     obj[route][item] = data;
                         if(err){
                             console.log(err);
-                            cb(err, null);
+                            return cb(err, null);
                         }
                         nbCallback--;
                         if(nbCallback == 0){
-                            cb(null, obj);
+                            return cb(null, obj);
                         }
                     });
                 })(route,item);

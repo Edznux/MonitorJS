@@ -5,7 +5,6 @@ config.notify	={};
 config.perf		={};
 
 /* Global Api configuration*/
-config.IP		= "111.222.33.44";
 config.logFiles = ["/var/log/mongodb.log","/var/log/dpkg.log"];
 
 /* Authentification configuration if config.auth.enable is false, login and password are ignored */

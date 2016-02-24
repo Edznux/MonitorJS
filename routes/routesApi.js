@@ -1,7 +1,7 @@
 var conf = require("../config");
 
 module.exports = function(app){
-	app.get("/api/*",function (req, res, next) {
+	app.get(["/api","/api/*"],function (req, res, next) {
 		res.contentType('application/json');
 		next();
 	});
@@ -39,7 +39,7 @@ module.exports = function(app){
 		}
 	}
 	app.get('/api', function(req, res) {
-		res.send(JSON.stringify({'success' : true, 'data' : "Documentation available at https://github.com/edznux/monitorjs"}));
+		res.send(JSON.stringify({success : true, data : "Documentation available at https://github.com/edznux/monitorjs"}));
 	});
 
 	//call "sendApi" function with parts and name of object requested
