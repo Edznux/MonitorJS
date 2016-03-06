@@ -11,7 +11,7 @@ Each module can be found in the `/lib/addon` folder
 
 ### API
 
-- [x] HTTP REST API
+- [x] HTTP REST API-
 	- [x] Memory
 	- [x] CPU
 	- [x] Networking

@@ -28,5 +28,6 @@ config.notify.email = "yourmail@example.com";
 config.perf.clockGlobal = 1000; // 2sec
 config.perf.clockLogs		= 30000; // 30sec for reloading logs files
 config.perf.clockSave		= 10000; // 10sec for saving in database
+config.perf.clockAlert		= 10000; // 10sec loop for alert
 
 module.exports = config;
