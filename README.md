@@ -109,35 +109,49 @@ mv _addonName.js addonName.js
 - Monitoring object
 	+ `app.monitor`
 		* disk
-			- `all`
-			- `fileSystem`
-			- `size`
-			- `used`
-			- `avail`
-			- `use`
-			- `mounted`
+			- `all` Array of Array : Gt all raw "data"
+			- `fileSystem` Array : File-system type
+			- `size` Array : Size for each partition (in bytes)
+			- `used` Array : Capacity used (in bytes)
+			- `avail` Array : Capacity available (in bytes)
+			- `use` Array : Usage percentages
+			- `mounted` Array : List of all mounted file system
 		* cpu
-			- `uptime`
-			- `load`
-			- `stats`
-			- `infos`
+			- `uptime` Number : Uptime in seconds
+			- `load` Number : Load over 5 seconds
+			- `stats` Array of Objects :
+				```
+				{
+					model: String,
+					speed: Number,
+					times: {
+						user: Number,
+       						nice: Number,
+						sys: Number,
+       						idle: Number,
+						irq: Number
+					}
+				}
+				```
+			- `infos` : Array (/proc/cpuinfo parsing)
 		* memory
-			- `all`
-			- `total`
-			- `free`
-			- `cached`
-			- `buffers`
-			- `active`
-			- `inactive`
+			- `all` Array : All the information about memory
+			- `total` Number : total memory on the system (in bytes)
+			- `free` Number : Free memory on the system (in bytes)
+			- `cached` Number : cached memory on the system (in bytes)
+			- `buffers` Number : buffered memory on the system (in bytes)
+			- `active` Number : active memory on the system (in bytes)
+			- `inactive` Number : inactive memory on the system (in bytes)
 		* os
-			- `release`
-			- `architecture`
-			- `type`
+			- `release` String : Name of the release
+			- `architecture` String : 'x64', 'arm', 'ia32'
+			- `type` String : System name
 		* network
-			- `interfaces`
-			- `rx`
-			- `tx`
-			- `ping`
+			- `interfaces` Object : ```{ interfaceX : [{adress : String, netmask : String, familly : String, mac: String, internal : Boolean }] ```
+			- `rx` Number : rx bytes since boot
+			- `tx` Number : tx bytes since boot
+			- `ping` Number : last ping against target (set in config)
+
 
 
 ## Contributions
