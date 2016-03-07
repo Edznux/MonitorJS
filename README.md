@@ -68,9 +68,11 @@ sudo apt-get install -y mongodb-org
 ```
 [More documentation](https://docs.mongodb.org/v3.0/tutorial/install-mongodb-on-debian/ "More infos")
 
-## Addons (module)
+## Documentation
 
-### Create
+### Addons
+
+#### Create
 
 Any javascript files in the `/lib/addon` folder will be auto-loaded (at startup).
 
@@ -82,14 +84,61 @@ module.exports = function(app){
 }
 ```
 
-### Disable
+#### Enable / Disable
 
-Each addon is in it's own file. Disabling one addon is simple as :
+Each addon is in it's own .js file. Disabling one addon is simple as :
 ```
 cd lib/addon
 mv addonName.js _addonName.js
 ```
 (on Unix based systems)
+
+Re-enable them by the reverse operation
+```
+cd lib/addon
+mv _addonName.js addonName.js
+```
+
+### Developpement
+
+#### Application wide variable
+
+- Socket
+	+ `app.sendDataWs(data, channel)` Method for sending data over websocket ()
+	+ `app.io` Socket.io instance variable
+- Monitoring object
+	+ `app.monitor`
+		* disk
+			- `all`
+			- `fileSystem`
+			- `size`
+			- `used`
+			- `avail`
+			- `use`
+			- `mounted`
+		* cpu
+			- `uptime`
+			- `load`
+			- `stats`
+			- `infos`
+		* memory
+			- `all`
+			- `total`
+			- `free`
+			- `cached`
+			- `buffers`
+			- `active`
+			- `inactive`
+		* os
+			- `release`
+			- `architecture`
+			- `type`
+		* network
+			- `interfaces`
+			- `rx`
+			- `tx`
+			- `ping`
+
 
 ## Contributions
 Feel free to PR or link your modules, i will add them to this readme
