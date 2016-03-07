@@ -24,6 +24,10 @@ var conf= require("./config");
 var clock= require("./lib/clock");
 
 app.monitor = require("./lib/core.js");
+app.io = io;
+require("./routes/routesAnalytics")(app);
+require("./routes/routesApi")(app);
+require("./routes/routesWebSocket")(app);
 
 /**
 * Addons Loader
@@ -44,9 +48,6 @@ fs.readdir("./lib/addon", function(err,files){
     }
 });
 
-require("./routes/routesAnalytics")(app);
-require("./routes/routesApi")(app);
-require("./routes/routesWebSocket")(app,io);
 
 
 server.listen(port, function() {
