@@ -39,7 +39,10 @@ Each module can be found in the `/lib/addon` folder
 
 First, clone the repo
 ```
+# without web interface
 git clone https://github.com/Edznux/MonitorJS
+# with the web interface
+git clone --recursive https://github.com/Edznux/MonitorJS
 ```
 
 Move into the directory
@@ -57,6 +60,15 @@ Start the app:
 node app.js
 ```
 
+### Web interface
+
+The currently supported web ui is in its own submodule. To install on already cloned repository, use : 
+
+```
+git submodule update --init --recursive
+```
+
+in the `public` directory 
 ### Database *(Optional)*
 
 #### Debian based distribution (ubuntu)
